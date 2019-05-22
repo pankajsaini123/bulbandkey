@@ -9,7 +9,7 @@
           src="https://farm{{current.farm}}.staticflickr.com/{{current.server}}/{{current.id}}_{{current.secret}}.jpg"
           alt="{{current.title}}" (click)="goToReview(current)">
 
-        <span *ngIf="current.id == review.photo.id">
+        <span *ngIf=" review && current.id == review.photo.id">
           <p><b>Name :</b>{{review?.name}}</p>
           <p><b>Stars :</b>{{review?.stars}}</p>
           <p><b>Comment :</b>{{review?.comment}}</p>
