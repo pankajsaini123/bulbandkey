@@ -1,0 +1,26 @@
+<div class="container-fluid">
+  <div class="col-md-12 text-center">
+ 
+        <h2 *ngIf="loading" style="margin-top:20%">Loading...</h2>
+    
+   <div class="row" *ngIf="!loading">      
+      <div  class="col-md-3" *ngFor='let current of images | paginate: { itemsPerPage: 10, currentPage: p }'>
+        <img class="img-responsive"
+          src="https://farm{{current.farm}}.staticflickr.com/{{current.server}}/{{current.id}}_{{current.secret}}.jpg"
+          alt="{{current.title}}" (click)="goToReview(current)">
+
+        <span *ngIf="current.id == review.photo.id">
+          <p><b>Name :</b>{{review?.name}}</p>
+          <p><b>Stars :</b>{{review?.stars}}</p>
+          <p><b>Comment :</b>{{review?.comment}}</p>
+        </span>
+      </div>
+<br>
+     
+    </div> 
+    
+   <br>
+   <pagination-controls *ngIf="!loading" (pageChange)="p = $event"></pagination-controls>
+  </div>
+  <br>
+</div>

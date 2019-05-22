@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="col-md-4 offset-md-4  border border-primary" style="border: 1px solid black">
+        <img class="rounded mx-auto d-block" src="https://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}.jpg" alt="{{photo.title}}">
+        <figcaption class="figure-caption text-center">{{photo.title}}</figcaption>
+        <br>
+    <p><b>Owner :</b> {{photo.owner}}</p> <hr>
+ 
+
+    <form>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" name="name"  placeholder="Enter name" [(ngModel)]="name">
+      </div>
+     
+     <div class="form-group">
+       <label for="stars">Stars</label>
+       <br>
+
+       <input type="radio" name="stars" id="stars" value="1" [(ngModel)]="stars">1 &nbsp;&nbsp;
+       <input type="radio" name="stars" id="stars" value="2" [(ngModel)]="stars">2&nbsp;&nbsp;
+       <input type="radio" name="stars" id="stars" value="3" [(ngModel)]="stars">3&nbsp;&nbsp;
+       <input type="radio" name="stars" id="stars" value="4" [(ngModel)]="stars">4&nbsp;&nbsp;
+       <input type="radio" name="stars" id="stars" value="5" [(ngModel)]="stars">5&nbsp;&nbsp;<br>
+       <input type="radio" name="stars" id="stars" value="6" [(ngModel)]="stars">6&nbsp;&nbsp;
+       <input type="radio" name="stars" id="stars" value="7" [(ngModel)]="stars">7&nbsp;&nbsp;
+       <input type="radio" name="stars" id="stars" value="8" [(ngModel)]="stars">8&nbsp;&nbsp;
+       <input type="radio" name="stars" id="stars" value="9" [(ngModel)]="stars">9&nbsp;&nbsp;
+       <input type="radio" name="stars" id="stars" value="10" [(ngModel)]="stars">10&nbsp;&nbsp;
+     </div>
+    <div class="form-group">
+      <label for="comment">Comment</label>
+      <input type="text" class="form-control" id="comment" name="comment"  placeholder="Leave comment" [(ngModel)]="comment">
+    </div>
+
+
+      <button type="button" class="btn btn-primary" (click)="addFeedback()">Submit</button>
+    </form>
+      </div>
+</div>
